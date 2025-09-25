@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:3000", 
-    "https://your-frontend-domain.vercel.app", // Add your actual frontend domain
+    "https://turf-frontend-og.vercel.app/", // Add your actual frontend domain
     process.env.FRONTEND_URL // You can set this in Render environment variables
   ],
   credentials: true,
