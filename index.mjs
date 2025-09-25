@@ -7,19 +7,12 @@ dotenv.config();
 
 const app = express();
 
-// Configure CORS to allow requests from your frontend domain
-// Replace the placeholder with your actual Vercel domain
-const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  optionsSuccessStatus: 200 // For legacy browser support
-};
-
-// Use the cors middleware with the specified options
-app.use(cors(corsOptions));
+// Use the cors middleware to allow all cross-origin requests.
+app.use(cors());
 app.use(express.json());
 
 const razorpay = new Razorpay({
-  key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+  key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
